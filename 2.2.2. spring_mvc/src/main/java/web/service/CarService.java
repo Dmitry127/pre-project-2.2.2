@@ -12,6 +12,9 @@ public class CarService {
 
 
     public List<Car> getNumberOfCars(int count) {
+        if(count > 5) {
+            count = 5;
+        }
         return CarUtil.getCars().stream().limit(count).collect(Collectors.toList());
     }
 }
